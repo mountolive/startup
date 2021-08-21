@@ -33,4 +33,3 @@ add_alias() {
 add_env_var() {
     echo "$1\n" > ~/.bash_envs && echo "env added"
 }
-
