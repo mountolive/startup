@@ -19,6 +19,8 @@ add_alias aliases "nvim ~/.bash_aliases"
 add_alias envsvars "nvim ~/.bash_envs"
 source ~/.bashrc
 
+mkdir -p ~/apps && echo "apps dir created"
+
 # ASDF version manager
 check_response "Did you installed pre-requisites for python and node? (check README.md)\n"
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1 && echo "asdf download"
@@ -35,6 +37,8 @@ asdf install python 2.7.18
 asdf global python 3.9.5 2.7.18
 pip install neovim
 pip2 install neovim
+add_env_var "export PATH=\"$PATH:$HOME/.asdf/installs/python/3.9.5/bin\""
+sbrc
 
 # Node
 echo "we need to install node now, sorry"
@@ -46,13 +50,17 @@ npm i -g neovim
 echo "installing pyright"
 npm i -g pyright
 
+# Go
+apps && curl -LO https://golang.org/dl/go1.17.linux-amd64.tar.gz && echo "go 1.17 downloaded"
+tar -C ~/ -xzf ~/apps/go1.17.linux-amd64.tar.gz
+add_env_var "export PATH=\"$PATH:~/go/bin\""
+echo "go 1.17 installed"
+
 # Rust
 
-# Go
 
 # NVIM
 echo "starting nvim installation"
-mkdir -p ~/apps && echo "apps dir created"
 
 cd ~/apps && curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage && echo "nvim downloaded correctly"
 chmod u+x nvim.appimage && echo "permissions changed for nvim.appimage"
