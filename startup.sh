@@ -62,6 +62,7 @@ add_env_var "export PATH=\"$PATH:~/go/bin\""
 sbrc
 echo "go 1.17 installed"
 echo "installing go tooling"
+go install golang.org/x/tools/gopls@latest
 go install mvdan.cc/gofumpt@latest
 go install mvdan.cc/gofumpt/gofumports@latest
 go install github.com/matryer/moq@latest
