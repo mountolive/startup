@@ -69,6 +69,7 @@ add_env_var "export PATH=$PATH:~/go/bin"
 sbrc
 echo "go 1.17 installed"
 echo "installing go tooling"
+curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.42.0
 go install golang.org/x/tools/gopls@latest
 go install mvdan.cc/gofumpt@latest
 go install mvdan.cc/gofumpt/gofumports@latest
