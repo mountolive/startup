@@ -18,7 +18,7 @@ add_alias ebrc "nvim ~/.bashrc"
 add_alias initvim "cd ~/.config/nvim"
 add_alias apps "cd ~/apps"
 add_alias aliases "nvim ~/.bash_aliases"
-add_alias envsvars "nvim ~/.bash_envs"
+add_alias enved "nvim ~/.bash_envs"
 source ~/.bashrc
 
 mkdir -p ~/apps && echo "apps dir created"
@@ -48,7 +48,7 @@ asdf install python 2.7.18
 asdf global python 3.9.5 2.7.18
 pip install neovim
 pip2 install neovim
-add_env_var "export PATH=\"$PATH:$HOME/.asdf/installs/python/3.9.5/bin\""
+add_env_var "export PATH=$PATH:$HOME/.asdf/installs/python/3.9.5/bin"
 sbrc
 
 # Node
@@ -65,7 +65,7 @@ npm i -g pyright
 check_response "You're going to install go 1.17. Is that ok? (Y/N)"
 apps && curl -LO https://golang.org/dl/go1.17.linux-amd64.tar.gz && echo "go 1.17 downloaded"
 tar -C ~/ -xzf ~/apps/go1.17.linux-amd64.tar.gz
-add_env_var "export PATH=\"$PATH:~/go/bin\""
+add_env_var "export PATH=$PATH:~/go/bin"
 sbrc
 echo "go 1.17 installed"
 echo "installing go tooling"

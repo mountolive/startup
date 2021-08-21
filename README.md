@@ -6,5 +6,5 @@ _Note to self_: It's done from an Ubuntu system, make sure to edit locally accor
 ## Pre-requisites
 
 ```
-sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl dirmngr gpg gawk coreutils xclip autoconf automake realpath
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl dirmngr gpg gawk coreutils xclip autoconf automake realpath silversearcher-ag
 ```
