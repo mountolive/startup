@@ -23,6 +23,13 @@ source ~/.bashrc
 
 mkdir -p ~/apps && echo "apps dir created"
 
+mkdir -p ~/.local/bin 
+add_env_var "export PATH=$PATH:~/bin"
+add_env_var "export PATH=$PATH:~/.local/bin"
+# source it
+sbrc
+
+
 check_response "Did you installed pre-requisites? (check README.md)\n"
 
 # ASDF version manager
@@ -97,10 +104,7 @@ echo "starting nvim installation"
 
 cd ~/apps && curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage && echo "nvim downloaded correctly"
 chmod u+x nvim.appimage && echo "permissions changed for nvim.appimage"
-mkdir -p ~/.local/bin && ln -s ~/apps/nvim.appimage ~/.local/bin/nvim && echo "nvim linked"
-add_env_var "export PATH=$PATH:~/.local/bin"
-# source it
-sbrc
+ln -s ~/apps/nvim.appimage ~/.local/bin/nvim && echo "nvim linked"
 
 echo "setting nvim config"
 cd ~/.config && git clone git@github.com:mountolive/init.vim.git && mv init.vim nvim && echo "cloned your init.vim"
