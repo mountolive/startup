@@ -8,6 +8,8 @@ require gcc
 git config --global url.ssh://git@github.com/.insteadOf https://github.com/ && echo "git setted up to use ssh"
 git config --global user.name "leo guercio"
 git config --global user.email "lpguercio@gmail.com"
+# git checkout by regex
+git config --global alias.rc '!regex-checkout() { git checkout $(git branch | grep -e \"$1\" | head -n1); }; regex-checkout'
 
 check_response "Did you added an ssh key for this device in your github account?\n"
 
