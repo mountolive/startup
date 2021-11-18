@@ -10,6 +10,7 @@ git config --global user.name "leo guercio"
 git config --global user.email "lpguercio@gmail.com"
 # git checkout by regex
 git config --global alias.rc '!regex-checkout() { git checkout $(git branch | grep -e \"$1\" | head -n1); }; regex-checkout'
+git config --global alias.cb '!current-branch() { git rev-parse --abbrev-ref HEAD; }; current-branch'
 
 check_response "Did you added an ssh key for this device in your github account?\n"
 
